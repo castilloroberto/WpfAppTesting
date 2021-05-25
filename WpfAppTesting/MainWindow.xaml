@@ -1,0 +1,76 @@
+﻿<Window x:Class="WpfAppTesting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppTesting"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Grid.Column="0">
+
+            <!--Left, Top, Right and Bottom-->
+
+            <!--cero margin abajo-->
+            <Label Content="Nombre:" Width="60" Height="25" HorizontalAlignment="Left" Margin="20,20,20,0"/> 
+            <!--cero margin arriba-->
+            <TextBox  x:Name="txt_name" Width="150" Height="20" HorizontalAlignment="Left" Margin="20,0,20,10"/>
+            
+            
+            <!--Apeliido-->
+            <Label Content="Apellidos:" Width="60" Height="25" HorizontalAlignment="Left" Margin="20,0,20,0"/>
+            <TextBox  x:Name="txt_lastname" Width="150" Height="20" HorizontalAlignment="Left" Margin="20,0,20,10"/>
+
+            
+            <!--Correo-->
+            <Label Content="Correo:" Width="60" Height="25" HorizontalAlignment="Left" Margin="20,0,20,0"/>
+            <TextBox  x:Name="txt_email" Width="150" Height="20" HorizontalAlignment="Left" Margin="20,0,20,10"/>
+
+            <!--FEcha Nacimiento-->
+            <Label Content="Fecha Nacimiento:" Width="150" Height="25" HorizontalAlignment="Left" Margin="20,20,20,0"/>
+            <TextBox  x:Name="txt_brithday" Width="150" Height="25" HorizontalAlignment="Left" Margin="20,0,20,20"/>
+
+
+            <!--Genero-->
+            <Label Content="Genero:" Width="60" Height="25" HorizontalAlignment="Left" Margin="20,0,20,0"/>
+            <ComboBox  x:Name="txt_gender" Width="150" Height="20" HorizontalAlignment="Left" Margin="20,0,20,10">
+                <ComboBoxItem Content="Masculino"/>
+                <ComboBoxItem Content="Femenino"/>
+                <ComboBoxItem Content="Otro"/>
+            </ComboBox>
+
+            <Button Click="btn_save_Click" x:Name="btn_save" Content="Guardar" Height="25" Width="150" HorizontalAlignment="Left" Margin="20" />
+            
+            
+        </StackPanel>
+
+
+
+        <DataGrid x:Name="dgv_people" Grid.Column="1" Margin="20">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}" />
+                <DataGridTextColumn Header="Nombres" Binding="{Binding Path=Name}" />
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding Path=Lastname}" />
+                <DataGridTextColumn Header="Correo" Binding="{Binding Path=Email}" />
+                <DataGridTextColumn Header="Fecha Nacimiento"  Binding="{Binding Path=Birthday}"/>
+                <DataGridTextColumn Header="Genero" Binding="{Binding Path=gender}" />
+            </DataGrid.Columns>
+        </DataGrid> 
+        
+        
+
+
+    </Grid>
+</Window>
